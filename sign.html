@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Recognition</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f1f5fb;
+            color: #243047;
+        }
+
+        header {
+            background: #193b70;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h2 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 45px 20px 25px;
+        }
+
+        .hero h1 {
+            color: #193b70;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+            color: #5b6678;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #172c4812;
+        }
+
+        .card h2 {
+            color: #193b70;
+            margin-bottom: 18px;
+            font-size: 21px;
+        }
+
+        .camera {
+            min-height: 230px;
+            background: #e9eff8;
+            border: 2px dashed #8da7cc;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            gap: 12px;
+        }
+
+        .camera .symbol {
+            font-size: 55px;
+        }
+
+        .camera p {
+            color: #53647b;
+            line-height: 1.5;
+        }
+
+        button {
+            background: #2864bd;
+            color: white;
+            border: none;
+            padding: 13px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 18px;
+            width: 100%;
+        }
+
+        .output {
+            background: #eef8f0;
+            border-radius: 12px;
+            padding: 22px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .output h3 {
+            color: #267342;
+        }
+
+        .output p {
+            color: #4b6251;
+        }
+
+        .features {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #193b70;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .feature {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            line-height: 1.6;
+        }
+
+        .feature h3 {
+            color: #2864bd;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            background: #193b70;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>SignConnect</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#recognition">Recognition</a>
+            <a href="#features">Features</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Cloud-Based Sign Language Recognition</h1>
+        <p>
+            Breaking communication barriers with AI.
+            This project aims to recognize sign-language gestures
+            and convert them into readable text.
+        </p>
+    </section>
+
+    <section class="container" id="recognition">
+
+        <div class="card">
+            <h2>Sign Recognition</h2>
+
+            <div class="camera">
+                <div class="symbol">&#128247;</div>
+                <h3>Camera Preview Area</h3>
+                <p>
+                    Show a sign-language gesture in front of
+                    the camera when recognition is connected.
+                </p>
+            </div>
+
+            <button type="button">
+                Start Recognition
+            </button>
+        </div>
+
+        <div class="card">
+            <h2>Recognition Result</h2>
+
+            <div class="output">
+                <h3>Recognized Text</h3>
+                <p>
+                    Your recognized sign will appear here
+                    after the AI model is connected.
+                </p>
+            </div>
+
+            <br>
+
+            <h3>How it works</h3>
+            <p style="line-height: 1.8; margin-top: 10px;">
+                1. Capture a hand gesture.<br>
+                2. Send the image for AI processing.<br>
+                3. Display the recognized sign as text.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="features" id="features">
+        <h2>Project Features</h2>
+
+        <div class="feature-list">
+            <div class="feature">
+                <h3>AI Recognition</h3>
+                Identifies sign-language gestures using
+                a trained machine-learning model.
+            </div>
+
+            <div class="feature">
+                <h3>Cloud Processing</h3>
+                Processes uploaded images or video frames
+                through a cloud-hosted service.
+            </div>
+
+            <div class="feature">
+                <h3>Text Conversion</h3>
+                Displays recognized gestures as text
+                to support communication.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>SignConnect | AI & Data Science Project</p>
+    </footer>
+
+</body>
+</html>
